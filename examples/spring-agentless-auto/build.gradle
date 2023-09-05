@@ -1,0 +1,26 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.1.0'
+    id 'java'
+}
+
+group = 'io.honeycomb.examples'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // use local sdk
+    implementation project(":sdk")
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // added for agentless http traces
+    // version from https://central.sonatype.com/artifact/io.opentelemetry.instrumentation/opentelemetry-java-http-client/1.29.0-alpha/versions
+    implementation("io.opentelemetry.instrumentation:opentelemetry-java-http-client:1.27.0-alpha")
+
+    // added for agentless spring traces
+
+}

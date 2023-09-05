@@ -6,7 +6,7 @@ To use the examples:
 
 - Clone or download the entire repo, as they rely on local code instead of Maven Central
 - Add environment variables (or system properties)
-- From the spring-agent, spring-sdk, or spring-agent-only directory run `../../gradlew bootRun`
+- From the spring-agent, spring-sdk, spring-agent-only, or spring-agentless-auto directory run `../../gradlew bootRun`
 - `curl` the endpoint to get a response and see data in Honeycomb.
 
 ### spring-agent
@@ -26,3 +26,9 @@ This example uses the Honeycomb SDK for manual instrumentation.
 This example uses ONLY the agent running alongside the app
 
 `curl localhost:5002`
+
+### spring-agentless-auto
+
+This example does not use the agent but adds spring auto instrumentation
+
+`curl localhost:5003`
